@@ -14,7 +14,7 @@ const TodoList = ({todos, onRemove, onToggle}) => {
             todo={todo}
             key={key}
             onRemove={onRemove}
-            onToggle={ontoggle}
+            onToggle={onToggle}
             style={style}
         />
       );
