@@ -1,31 +1,10 @@
-// import styled from 'styled-components';
-// import NewsItemContext from '../context/newsList';
-
-// const NewsItemBlock = styled.div`
-//   display: flex;
-//   .thumbnail {
-//     margin-right: 1rem;
-//     img{
-//       display: block;
-//       width: 160px;
-//       height: 100px;
-//       object-fit: cover;
-//     }
-//   }
-//   .contents {
-
-//   }
-//   & + & {
-//     margin-top: 3rem;
-//   }
-// `;
 
 const NewsItem = ({props}) => {
 
   return (
     <>
     <div className="w-[58rem] h-52 rounded-lg w-full bg-white drop-shadow-lg flex justify-around items-center">
-      <img className="w-1/5 h-4/5 object-cover ml-5" src={props.urlToImage} alt='thumbnail'/>
+      <img className="w-1/5 h-4/5 object-cover ml-5" src={props.urlToImage ? props.urlToImage : 'https://via.placeholder.com/160'} alt='thumbnail'/>
       <div className="w-2/3 h-4/5">
         <div className="w-full h-1/4 text-xl font-bold truncate">
         {props.title}
@@ -34,7 +13,7 @@ const NewsItem = ({props}) => {
         {props.description}
         </div>
         <div className="text-slate-400 mt-2">
-          06월 03일 17:55
+          {`${props.publishedAt.slice(5,7)}월 ${props.publishedAt.slice(8,10)}일 ${props.publishedAt.slice(11,19)}`}
         </div>
       </div>      
     </div>
