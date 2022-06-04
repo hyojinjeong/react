@@ -6,8 +6,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<NewsPage />}></Route>
-      <Route path="/:category" element={<NewsPage />}>
-      </Route>      
+      <Route path="/:category/:page" element={<NewsPage />}>
+        {/* <Route path=":page" element={<NewsPage />}></Route>   */}
+      </Route>          
     </Routes>
     )
   }

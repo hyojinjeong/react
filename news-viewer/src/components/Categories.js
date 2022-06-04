@@ -11,19 +11,19 @@ const categories = [
   },
   {
     name: 'entertainment',
-    text: '엔터테인먼트'
+    text: '엔터테인먼트'  
   },
   {
     name: 'health',
-    text: '건강'
+    text: '건강' 
   }, 
   {
     name: 'science',
-    text: '과학'
+    text: '과학'  
   },     
   {
     name: 'sports',
-    text: '스포츠'
+    text: '스포츠' 
   },    
   {
     name: 'technology',
@@ -31,7 +31,7 @@ const categories = [
   },  
 ]
 
-const Categories = () => {
+const Categories = ({page}) => {
 
   return (
     <>
@@ -40,7 +40,7 @@ const Categories = () => {
           {categories.map( e => 
           <NavLink 
             key={e.name}
-            to={e.name==='all'? '/' : `/${e.name}`}  
+            to={e.name==='all'? '/' : `/${e.name}/1`}  
             className={({isActive}) => (isActive ? 'border-solid border-b-4 border-white' : undefined)}>
             {e.text}
           </NavLink>)}                                                  
