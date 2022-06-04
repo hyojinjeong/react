@@ -31,14 +31,11 @@ const categories = [
   },  
 ]
 
-const Categories = ({category, onSelect}) => {
-  console.log('category', category);
+const Categories = ({category}) => {
+  
   return (
     <>
       <div className='fixed inset-x-0 top-0 w-full h-14 bg-main flex justify-center font-bold z-10'>
-        {/* <div className='flex items-center space-x-11 text-white text-lg'>
-          {categories.map( e => <div className="active:border-solid border-b-4 border-white" key={e.name} onClick={() => onSelect(e.name)} active={category === e.name}>{e.text}</div>)}                                               
-        </div>  */}
         <div className='flex items-center space-x-11 text-white text-lg'>
           {categories.map( e => 
           <NavLink 
