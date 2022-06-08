@@ -35,7 +35,7 @@ const categories = [
 
 const Categories = () => {
   const ctxVal = useContext(Context);
-  console.log('cat', ctxVal);
+
   return (
     <>
       <div className='fixed inset-x-0 top-0 w-full h-14 bg-main flex justify-center font-bold z-10'>
