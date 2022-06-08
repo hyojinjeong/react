@@ -1,4 +1,6 @@
+import React, { useContext } from 'react';
 import { NavLink } from "../../node_modules/react-router-dom/index";
+import { Context } from '../context/Provider';
 
 const categories = [
   {
@@ -31,8 +33,9 @@ const categories = [
   },  
 ]
 
-const Categories = ({page}) => {
-
+const Categories = () => {
+  const ctxVal = useContext(Context);
+  console.log('cat', ctxVal);
   return (
     <>
       <div className='fixed inset-x-0 top-0 w-full h-14 bg-main flex justify-center font-bold z-10'>
@@ -40,7 +43,7 @@ const Categories = ({page}) => {
           {categories.map( e => 
           <NavLink 
             key={e.name}
-            to={e.name==='all'? '/' : `/${e.name}/1`}  
+            to={e.name==='all'? '/' : `/${e.name}/${ctxVal.page}`}  
             className={({isActive}) => (isActive ? 'border-solid border-b-4 border-white' : undefined)}>
             {e.text}
           </NavLink>)}                                                  
